@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import bgreact from './backgroundimgnative.jpg'
+import { Button, StyleSheet, Text, TextInput, View, ImageBackground } from 'react-native';
 
 export default class App extends Component {
+  
   render(){
   return (
     <View style={styles.container}>
+      <Text style={styles.titleColor}>Learning React Native</Text>
       <View style={styles.buttonContainer}>
         <Button onPress={this._onPressButton}
             title="Press me"
@@ -33,6 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   buttonContainer:{
     margin: 20
@@ -41,5 +45,12 @@ const styles = StyleSheet.create({
     margin:20,
     flexDirection:'row',
     justifyContent:'space-between'
+  },
+  titleColor:{
+    fontSize:30,
+    textAlign:'center',
+    color:'#F15A39',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 });
