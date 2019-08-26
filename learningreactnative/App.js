@@ -3,11 +3,34 @@ import bgreact from './backgroundimgnative.jpg'
 import { Button, StyleSheet, Text, TextInput, View, ImageBackground } from 'react-native';
 
 export default class App extends Component {
-  
+  constructor(){
+    super()
+    this.state = {}
+    this.state.customText = {
+      color:'blue'
+    }
+    setInterval(()=>{
+      if (this.state.customText.color == 'blue'){
+          this.setState({
+            customText:{
+              color:'green'
+          }
+        })
+      }else{
+        this.setState({
+          customText:{
+            color:'blue'
+          }
+        })
+      }
+    },500)
+    
+
+  }
   render(){
   return (
     <View style={styles.container}>
-      <Text style={styles.titleColor}>Learning React Native</Text>
+      <Text style={[styles.titleColor,this.state.customText]}>Learning React Native</Text>
       <View style={styles.buttonContainer}>
         <Button onPress={this._onPressButton}
             title="Press me"
